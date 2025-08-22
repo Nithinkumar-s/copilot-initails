@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom layer */
+@layer base {
+  body { @apply font-sans antialiased; }
+  h1,h2,h3,h4,h5 { @apply font-semibold text-gray-900; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center gap-2 rounded-md border border-transparent bg-primary-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 transition-colors; }
+  .btn-secondary { @apply bg-white text-primary-700 border-primary-300 hover:bg-primary-50; }
+  .input { @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm; }
+  .card { @apply bg-white rounded-lg shadow-sm ring-1 ring-gray-200 p-4; }
+  .link { @apply text-primary-600 hover:text-primary-500 transition-colors; }
+  .btn-outline-light { @apply inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 backdrop-blur text-sm font-medium text-white px-4 py-2 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 transition; }
+  .hero-gradient { @apply relative overflow-hidden; }
+  .hero-gradient::before { content:""; @apply absolute inset-0; background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 60%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05), transparent 70%); }
+}
+
+.fade-enter { opacity: 0; }
+.fade-enter-active { opacity: 1; transition: opacity 150ms ease-in; }
